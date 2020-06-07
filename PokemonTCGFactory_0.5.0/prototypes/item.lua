@@ -38,5 +38,15 @@ data:extend({
         icon_size = 64,
         subgroup = "cards",
         stack_size = 999,
+    },
+    {
+        type = "item",
+        name = "printer",
+        icon = "__PokemonTCGFactory__/graphics/icons/printer.png",
+        icon_size = 64,
+        order = "g[printer]",
+        place_result = "printer",
+        subgroup = "cards",
+        stack_size = 20
     }
 })

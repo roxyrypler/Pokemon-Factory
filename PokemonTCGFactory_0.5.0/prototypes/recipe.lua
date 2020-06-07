@@ -24,18 +24,25 @@ data:extend({
   {
       type = "recipe",
       name = "Pokemon-Card",
-      enabled = "false",
+      enabled = true,
       ingredients = 
       {
         {"Ink", 1},
         {"Paper", 1}
       },
-      result = "Pokemon-Card"
+      results =
+      {
+        {name="Pokemon-Card", amount = 100},
+      },
+      subgroup = "cards",
+      icon = "__PokemonTCGFactory__/graphics/icons/PokemonCard.png",
+      icon_size = 64,
+      category = "printer"
   },
   {
       type = "recipe",
       name = "Pokemon-Booster-Pack",
-      enabled = "false",
+      enabled = true,
       ingredients = 
       {
         {"Pokemon-Card", 10},
@@ -45,11 +52,31 @@ data:extend({
   {
       type = "recipe",
       name = "Pokemon-Booster-Box",
-      enabled = "false",
+      enabled = true,
       ingredients = 
       {
         {"Pokemon-Booster-Pack", 36},
       },
       result = "Pokemon-Booster-Box"
-  }
+  },
+  {
+    type = "recipe",
+    name = "printer",
+    enabled = true,
+    ingredients = 
+    {
+      {"wood", 1},
+    },
+    result = "printer"
+  },
+  {
+    type = "recipe",
+    name = "printer",
+    enabled = true,
+    ingredients =
+    {
+      {type = "item", name = "iron-plate", amount = 1}
+    },
+    result = "printer"
+  },
 })

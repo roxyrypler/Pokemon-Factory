@@ -26,6 +26,10 @@ data:extend({
             type = "unlock-recipe",
             recipe = "Pokemon-Booster-Box"
           },
+          {
+            type = "unlock-recipe",
+            recipe = "printer"
+          }
         },
         unit =
         {

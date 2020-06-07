@@ -5,5 +5,5 @@
     "author": "Patrick",
     "description": "dette er min mod",
     "factorio_version": "0.17",
-    "dependencies": ["base >= 0.17.00"]
+    "dependencies": ["base >= 0.17.00", "bobgreenhouse >= 0.17.0"]
 }

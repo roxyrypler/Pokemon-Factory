@@ -24,5 +24,9 @@ data:extend({
         type = "item-subgroup",
         name = "booster-cases",
         group = "Pokemon"
+    },
+    {
+        type = "recipe-category",
+        name = "printer"
     }
 })
