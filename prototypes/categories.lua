@@ -11,5 +11,11 @@ data:extend({
     name = "pokemon-cards",
     group = "pokemon-tcg",
     order = "a[cards]"
+  },
+  {
+    type = "item-subgroup",
+    name = "pokemon-logistics",
+    group = "pokemon-tcg",
+    order = "b[logistics]"
   }
 })

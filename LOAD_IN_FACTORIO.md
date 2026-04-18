@@ -6,10 +6,11 @@ This guide loads the new proof-of-concept mod:
 Pokemon-Factory
 ```
 
-The mod currently adds one new crafting tab, `Pokemon TCG`, with one recipe:
+The mod currently adds a new crafting tab, `Pokemon TCG`, with proof-of-concept recipes:
 
 ```text
 1 wood -> 1 Pokemon Card
+4 wood -> 1 Shipping Box
 ```
 
 ## Requirements
@@ -75,12 +76,24 @@ Inside that tab, you should see:
 
 ```text
 Pokemon Card
+Shipping Box
 ```
 
-The recipe should be available from the start and should cost:
+Both recipes should be available from the start.
+
+## Check Selling
+
+1. Craft a `Pokemon Card`.
+2. Craft a `Shipping Box`.
+3. Place the `Shipping Box`.
+4. Put the `Pokemon Card` inside the `Shipping Box`.
+5. Open the `Shipping Box`.
+6. Click `Sell`.
+
+The money HUD at the top center of the screen should increase by:
 
 ```text
-1 wood
+$1
 ```
 
 ## If The Mod Does Not Appear
