@@ -1,29 +1,30 @@
-data:extend({
-  {
+local item_definitions = require("definitions.items")
+
+local prototype_fields = {
+  "icon",
+  "icon_size",
+  "hidden",
+  "subgroup",
+  "order",
+  "place_result",
+  "stack_size"
+}
+
+local item_prototypes = {}
+
+for _, item in pairs(item_definitions) do
+  local prototype = {
     type = "item",
-    name = "pokemon-dollar",
-    icon = "__Pokemon-Factory__/graphics/icons/dollar-sign.png",
-    icon_size = 64,
-    hidden = true,
-    stack_size = 1
-  },
-  {
-    type = "item",
-    name = "pokemon-card",
-    icon = "__Pokemon-Factory__/graphics/icons/pokemon-card.png",
-    icon_size = 64,
-    subgroup = "pokemon-cards",
-    order = "a[pokemon-card]",
-    stack_size = 100
-  },
-  {
-    type = "item",
-    name = "shipping-box",
-    icon = "__base__/graphics/icons/wooden-chest.png",
-    icon_size = 64,
-    subgroup = "pokemon-logistics",
-    order = "a[shipping-box]",
-    place_result = "shipping-box",
-    stack_size = 50
+    name = item.name
   }
-})
+
+  for _, field in pairs(prototype_fields) do
+    if item[field] ~= nil then
+      prototype[field] = item[field]
+    end
+  end
+
+  table.insert(item_prototypes, prototype)
+end
+
+data:extend(item_prototypes)

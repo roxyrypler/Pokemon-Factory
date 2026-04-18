@@ -2,11 +2,25 @@ local MONEY_FRAME = "pokemon_factory_money_frame"
 local MONEY_LABEL = "pokemon_factory_money_label"
 local SELL_FRAME = "pokemon_factory_sell_frame"
 local SELL_BUTTON = "pokemon_factory_sell_button"
+local EVALUATE_BUTTON = "pokemon_factory_evaluate_button"
 local SELL_STATUS = "pokemon_factory_sell_status"
 
+local ITEM_DEFINITIONS = require("definitions.items")
 local SHIPPING_BOX = "shipping-box"
-local SELL_ITEM = "pokemon-card"
-local MONEY_PER_CARD = 1
+
+local function build_sell_values()
+  local sell_values = {}
+
+  for _, item in pairs(ITEM_DEFINITIONS) do
+    if item.sell_price and item.sell_price > 0 then
+      sell_values[item.name] = item.sell_price
+    end
+  end
+
+  return sell_values
+end
+
+local SELL_VALUES = build_sell_values()
 
 local function ensure_storage()
   storage.money = storage.money or 0
@@ -140,10 +154,21 @@ local function create_sell_menu(player)
 
   row.add({
     type = "label",
-    caption = {"gui.pokemon-factory-sell-one-card"}
+    caption = {"gui.pokemon-factory-shipping-help"}
   })
 
-  frame.add({
+  local button_row = frame.add({
+    type = "flow",
+    direction = "horizontal"
+  })
+
+  button_row.add({
+    type = "button",
+    name = EVALUATE_BUTTON,
+    caption = {"gui.pokemon-factory-evaluate"}
+  })
+
+  button_row.add({
     type = "button",
     name = SELL_BUTTON,
     caption = {"gui.pokemon-factory-sell"}
@@ -169,35 +194,98 @@ local function get_open_shipping_box(player)
   return nil
 end
 
-local function sell_one_card(player)
-  ensure_storage()
+local function get_sell_menu_status(player)
+  local frame = player.gui.screen[SELL_FRAME]
 
-  local box = get_open_shipping_box(player)
-  if not box then
-    destroy_sell_menu(player)
-    return
+  if frame then
+    return frame[SELL_STATUS]
   end
 
-  local inventory = box.get_inventory(defines.inventory.chest)
-  local status = player.gui.screen[SELL_FRAME] and player.gui.screen[SELL_FRAME][SELL_STATUS]
+  return nil
+end
 
-  if not inventory or inventory.get_item_count(SELL_ITEM) < 1 then
+local function evaluate_inventory(inventory)
+  local item_count = 0
+  local value = 0
+
+  if not inventory then
+    return item_count, value
+  end
+
+  for item_name, item_value in pairs(SELL_VALUES) do
+    local count = inventory.get_item_count(item_name)
+
+    item_count = item_count + count
+    value = value + count * item_value
+  end
+
+  return item_count, value
+end
+
+local function get_open_shipping_inventory(player)
+  local box = get_open_shipping_box(player)
+
+  if not box then
+    destroy_sell_menu(player)
+    return nil
+  end
+
+  return box.get_inventory(defines.inventory.chest)
+end
+
+local function evaluate_shipping_box(player)
+  local inventory = get_open_shipping_inventory(player)
+  local status = get_sell_menu_status(player)
+  local item_count, value = evaluate_inventory(inventory)
+
+  if item_count == 0 then
     if status then
-      status.caption = {"gui.pokemon-factory-no-card"}
+      status.caption = {"gui.pokemon-factory-no-sellable-items"}
     end
     return
   end
 
-  inventory.remove({
-    name = SELL_ITEM,
-    count = 1
-  })
+  if status then
+    status.caption = {"gui.pokemon-factory-value", value, item_count}
+  end
+end
 
-  storage.money = storage.money + MONEY_PER_CARD
+local function sell_shipping_box_contents(player)
+  ensure_storage()
+
+  local inventory = get_open_shipping_inventory(player)
+  local status = get_sell_menu_status(player)
+  local item_count, value = evaluate_inventory(inventory)
+
+  if item_count == 0 then
+    if status then
+      status.caption = {"gui.pokemon-factory-no-sellable-items"}
+    end
+    return
+  end
+
+  local sold_count = 0
+  local sold_value = 0
+
+  for item_name, item_value in pairs(SELL_VALUES) do
+    local count = inventory.get_item_count(item_name)
+
+    if count > 0 then
+      local removed = inventory.remove({
+        name = item_name,
+        count = count
+      })
+
+      sold_count = sold_count + removed
+      sold_value = sold_value + removed * item_value
+    end
+  end
+
+  storage.money = storage.money + sold_value
   update_all_money_huds()
 
   if status then
-    status.caption = {"gui.pokemon-factory-sold-card"}
+    status.caption = {"gui.pokemon-factory-sold-items", sold_count, sold_value}
   end
 end
 
@@ -250,14 +338,20 @@ script.on_event(defines.events.on_gui_closed, function(event)
 end)
 
 script.on_event(defines.events.on_gui_click, function(event)
-  if not event.element.valid or event.element.name ~= SELL_BUTTON then
+  if not event.element.valid then
     return
   end
 
   local player = game.get_player(event.player_index)
 
-  if player then
-    sell_one_card(player)
+  if not player then
+    return
+  end
+
+  if event.element.name == SELL_BUTTON then
+    sell_shipping_box_contents(player)
+  elseif event.element.name == EVALUATE_BUTTON then
+    evaluate_shipping_box(player)
   end
 end)
 

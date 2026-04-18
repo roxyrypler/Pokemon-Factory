@@ -88,7 +88,8 @@ Both recipes should be available from the start.
 3. Place the `Shipping Box`.
 4. Put the `Pokemon Card` inside the `Shipping Box`.
 5. Open the `Shipping Box`.
-6. Click `Sell`.
+6. Click `Evaluate` to preview the value.
+7. Click `Sell`.
 
 The money HUD at the top center of the screen should increase by:
 
