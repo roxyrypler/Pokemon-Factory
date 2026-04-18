@@ -14,18 +14,44 @@ local function make_free_powered(machine)
   end
 end
 
+local function set_machine_art(machine, icon, entity_sprite)
+  machine.icon = icon
+  machine.icon_size = 64
+  machine.graphics_set = {
+    animation = {
+      filename = entity_sprite,
+      width = 128,
+      height = 128,
+      frame_count = 1,
+      shift = {0, 0},
+      scale = 0.75
+    }
+  }
+  machine.graphics_set_flipped = nil
+end
+
 shipping_box.name = "shipping-box"
-shipping_box.icon = "__base__/graphics/icons/wooden-chest.png"
+shipping_box.icon = "__Pokemon-Factory__/graphics/icons/shipping-box.png"
 shipping_box.icon_size = 64
 shipping_box.minable = {
   mining_time = 0.2,
   result = "shipping-box"
 }
 shipping_box.inventory_size = 16
+shipping_box.picture = {
+  filename = "__Pokemon-Factory__/graphics/entities/shipping-box.png",
+  width = 96,
+  height = 96,
+  shift = {0, 0},
+  scale = 0.5
+}
 
 wood_chipper.name = "wood-chipper"
-wood_chipper.icon = "__base__/graphics/icons/assembling-machine-1.png"
-wood_chipper.icon_size = 64
+set_machine_art(
+  wood_chipper,
+  "__Pokemon-Factory__/graphics/icons/wood-chipper.png",
+  "__Pokemon-Factory__/graphics/entities/wood-chipper.png"
+)
 wood_chipper.minable = {
   mining_time = 0.2,
   result = "wood-chipper"
@@ -37,8 +63,11 @@ wood_chipper.next_upgrade = nil
 make_free_powered(wood_chipper)
 
 wood_pulper.name = "wood-pulper"
-wood_pulper.icon = "__base__/graphics/icons/chemical-plant.png"
-wood_pulper.icon_size = 64
+set_machine_art(
+  wood_pulper,
+  "__Pokemon-Factory__/graphics/icons/wood-pulper.png",
+  "__Pokemon-Factory__/graphics/entities/wood-pulper.png"
+)
 wood_pulper.minable = {
   mining_time = 0.2,
   result = "wood-pulper"
@@ -50,8 +79,11 @@ wood_pulper.next_upgrade = nil
 make_free_powered(wood_pulper)
 
 paper_press.name = "paper-press"
-paper_press.icon = "__base__/graphics/icons/assembling-machine-1.png"
-paper_press.icon_size = 64
+set_machine_art(
+  paper_press,
+  "__Pokemon-Factory__/graphics/icons/paper-press.png",
+  "__Pokemon-Factory__/graphics/entities/paper-press.png"
+)
 paper_press.minable = {
   mining_time = 0.2,
   result = "paper-press"
@@ -63,8 +95,11 @@ paper_press.next_upgrade = nil
 make_free_powered(paper_press)
 
 cardstock_press.name = "cardstock-press"
-cardstock_press.icon = "__base__/graphics/icons/assembling-machine-1.png"
-cardstock_press.icon_size = 64
+set_machine_art(
+  cardstock_press,
+  "__Pokemon-Factory__/graphics/icons/cardstock-press.png",
+  "__Pokemon-Factory__/graphics/entities/cardstock-press.png"
+)
 cardstock_press.minable = {
   mining_time = 0.2,
   result = "cardstock-press"

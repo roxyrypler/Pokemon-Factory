@@ -8,7 +8,7 @@ return {
   },
   {
     name = "wood-chips",
-    icon = "__base__/graphics/icons/wood.png",
+    icon = "__Pokemon-Factory__/graphics/icons/wood-chips.png",
     icon_size = 64,
     subgroup = "pokemon-paper-materials",
     order = "a[wood-chips]",
@@ -16,7 +16,7 @@ return {
   },
   {
     name = "paper-pulp",
-    icon = "__base__/graphics/icons/wood.png",
+    icon = "__Pokemon-Factory__/graphics/icons/paper-pulp.png",
     icon_size = 64,
     subgroup = "pokemon-paper-materials",
     order = "b[paper-pulp]",
@@ -24,7 +24,7 @@ return {
   },
   {
     name = "paper-roll",
-    icon = "__base__/graphics/icons/plastic-bar.png",
+    icon = "__Pokemon-Factory__/graphics/icons/paper-roll.png",
     icon_size = 64,
     subgroup = "pokemon-paper-materials",
     order = "c[paper-roll]",
@@ -32,7 +32,7 @@ return {
   },
   {
     name = "paper-sheet",
-    icon = "__base__/graphics/icons/plastic-bar.png",
+    icon = "__Pokemon-Factory__/graphics/icons/paper-sheet.png",
     icon_size = 64,
     subgroup = "pokemon-paper-materials",
     order = "d[paper-sheet]",
@@ -40,7 +40,7 @@ return {
   },
   {
     name = "cardstock",
-    icon = "__Pokemon-Factory__/graphics/icons/pokemon-card.png",
+    icon = "__Pokemon-Factory__/graphics/icons/cardstock.png",
     icon_size = 64,
     subgroup = "pokemon-paper-materials",
     order = "e[cardstock]",
@@ -48,7 +48,7 @@ return {
   },
   {
     name = "wood-pulper",
-    icon = "__base__/graphics/icons/chemical-plant.png",
+    icon = "__Pokemon-Factory__/graphics/icons/wood-pulper.png",
     icon_size = 64,
     subgroup = "pokemon-machines",
     order = "b[wood-pulper]",
@@ -57,7 +57,7 @@ return {
   },
   {
     name = "wood-chipper",
-    icon = "__base__/graphics/icons/assembling-machine-1.png",
+    icon = "__Pokemon-Factory__/graphics/icons/wood-chipper.png",
     icon_size = 64,
     subgroup = "pokemon-machines",
     order = "a[wood-chipper]",
@@ -66,7 +66,7 @@ return {
   },
   {
     name = "paper-press",
-    icon = "__base__/graphics/icons/assembling-machine-1.png",
+    icon = "__Pokemon-Factory__/graphics/icons/paper-press.png",
     icon_size = 64,
     subgroup = "pokemon-machines",
     order = "c[paper-press]",
@@ -75,7 +75,7 @@ return {
   },
   {
     name = "cardstock-press",
-    icon = "__base__/graphics/icons/assembling-machine-1.png",
+    icon = "__Pokemon-Factory__/graphics/icons/cardstock-press.png",
     icon_size = 64,
     subgroup = "pokemon-machines",
     order = "d[cardstock-press]",
@@ -84,7 +84,7 @@ return {
   },
   {
     name = "shipping-box",
-    icon = "__base__/graphics/icons/wooden-chest.png",
+    icon = "__Pokemon-Factory__/graphics/icons/shipping-box.png",
     icon_size = 64,
     subgroup = "pokemon-logistics",
     order = "a[shipping-box]",
