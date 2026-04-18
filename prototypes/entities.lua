@@ -3,6 +3,7 @@ local wood_chipper = table.deepcopy(data.raw["assembling-machine"]["assembling-m
 local wood_pulper = table.deepcopy(data.raw["assembling-machine"]["chemical-plant"])
 local paper_press = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
 local cardstock_press = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
+local pigment_extractor = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
 local disable_water_and_power = settings.startup["pokemon-factory-disable-water-and-power"].value
 
 local function make_free_powered(machine)
@@ -110,10 +111,27 @@ cardstock_press.energy_usage = "100kW"
 cardstock_press.next_upgrade = nil
 make_free_powered(cardstock_press)
 
+pigment_extractor.name = "pigment-extractor"
+set_machine_art(
+  pigment_extractor,
+  "__Pokemon-Factory__/graphics/icons/pigment-extractor.png",
+  "__Pokemon-Factory__/graphics/entities/pigment-extractor.png"
+)
+pigment_extractor.minable = {
+  mining_time = 0.2,
+  result = "pigment-extractor"
+}
+pigment_extractor.crafting_categories = {"pokemon-pigment-extraction"}
+pigment_extractor.crafting_speed = 0.75
+pigment_extractor.energy_usage = "100kW"
+pigment_extractor.next_upgrade = nil
+make_free_powered(pigment_extractor)
+
 data:extend({
   shipping_box,
   wood_chipper,
   wood_pulper,
   paper_press,
-  cardstock_press
+  cardstock_press,
+  pigment_extractor
 })

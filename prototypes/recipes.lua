@@ -63,6 +63,17 @@ data:extend({
   },
   {
     type = "recipe",
+    name = "pigment-extractor",
+    enabled = true,
+    ingredients = {},
+    results = {
+      { type = "item", name = "pigment-extractor", amount = 1 }
+    },
+    subgroup = "pokemon-machines",
+    order = "e[pigment-extractor]"
+  },
+  {
+    type = "recipe",
     name = "wood-chips",
     category = "pokemon-wood-chipping",
     enabled = true,
@@ -147,5 +158,23 @@ data:extend({
     },
     subgroup = "pokemon-logistics",
     order = "a[shipping-box]"
+  },
+  {
+    type = "recipe",
+    name = "color-pigments",
+    category = "pokemon-pigment-extraction",
+    enabled = true,
+    energy_required = 2,
+    ingredients = {
+      { type = "item", name = "coal", amount = 1 },
+      { type = "item", name = "iron-ore", amount = 1 },
+      { type = "item", name = "copper-ore", amount = 1 },
+      { type = "item", name = "stone", amount = 1 }
+    },
+    results = {
+      { type = "item", name = "color-pigments", amount = 4 }
+    },
+    subgroup = "pokemon-ink-materials",
+    order = "a[color-pigments]"
   }
 })

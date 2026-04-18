@@ -47,6 +47,14 @@ return {
     stack_size = 200
   },
   {
+    name = "color-pigments",
+    icon = "__Pokemon-Factory__/graphics/icons/color-pigments.png",
+    icon_size = 64,
+    subgroup = "pokemon-ink-materials",
+    order = "a[color-pigments]",
+    stack_size = 200
+  },
+  {
     name = "wood-pulper",
     icon = "__Pokemon-Factory__/graphics/icons/wood-pulper.png",
     icon_size = 64,
@@ -80,6 +88,15 @@ return {
     subgroup = "pokemon-machines",
     order = "d[cardstock-press]",
     place_result = "cardstock-press",
+    stack_size = 20
+  },
+  {
+    name = "pigment-extractor",
+    icon = "__Pokemon-Factory__/graphics/icons/pigment-extractor.png",
+    icon_size = 64,
+    subgroup = "pokemon-machines",
+    order = "e[pigment-extractor]",
+    place_result = "pigment-extractor",
     stack_size = 20
   },
   {

@@ -10,6 +10,7 @@ The mod currently adds a new crafting tab, `Pokemon TCG`, with proof-of-concept 
 
 ```text
 wood -> wood chips -> paper pulp -> paper roll -> paper sheet -> cardstock
+coal + iron ore + copper ore + stone -> color pigments
 Shipping Box
 ```
 
@@ -83,6 +84,7 @@ Wood Chipper
 Wood Pulper
 Paper Press
 Cardstock Press
+Pigment Extractor
 Shipping Box
 ```
 
@@ -102,6 +104,15 @@ Wood Pulper: wood chips -> paper pulp
 Paper Press: paper pulp -> paper roll
 Paper Press: paper roll -> paper sheet
 Cardstock Press: paper sheets -> cardstock
+```
+
+## Check Pigment Production
+
+1. Craft and place a `Pigment Extractor`.
+2. Run the recipe:
+
+```text
+Pigment Extractor: coal + iron ore + copper ore + stone -> color pigments
 ```
 
 ## Check Selling

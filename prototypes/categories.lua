@@ -20,9 +20,15 @@ data:extend({
   },
   {
     type = "item-subgroup",
+    name = "pokemon-ink-materials",
+    group = "pokemon-tcg",
+    order = "c[ink-materials]"
+  },
+  {
+    type = "item-subgroup",
     name = "pokemon-logistics",
     group = "pokemon-tcg",
-    order = "c[logistics]"
+    order = "d[logistics]"
   },
   {
     type = "recipe-category",
@@ -39,5 +45,9 @@ data:extend({
   {
     type = "recipe-category",
     name = "pokemon-cardstock-pressing"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-pigment-extraction"
   }
 })
