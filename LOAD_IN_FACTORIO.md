@@ -3,7 +3,7 @@
 This guide loads the new proof-of-concept mod:
 
 ```text
-PokemonTCGFactory_0.1.0
+Pokemon-Factory
 ```
 
 The mod currently adds one new crafting tab, `Pokemon TCG`, with one recipe:
@@ -15,7 +15,7 @@ The mod currently adds one new crafting tab, `Pokemon TCG`, with one recipe:
 ## Requirements
 
 - Factorio 2.0
-- The folder `PokemonTCGFactory_0.1.0`
+- The folder `Pokemon-Factory`
 - No other mods are required
 
 ## Option 1: Copy The Mod Folder
@@ -30,7 +30,7 @@ From this repository, run:
 
 ```sh
 mkdir -p "$HOME/Library/Application Support/factorio/mods"
-cp -R "/Users/patrick/Documents/GitHub/Pokemon-Factory/PokemonTCGFactory_0.1.0" "$HOME/Library/Application Support/factorio/mods/"
+cp -R "/Users/patrick/Documents/GitHub/Pokemon-Factory" "$HOME/Library/Application Support/factorio/mods/"
 ```
 
 Then start Factorio.
@@ -41,14 +41,14 @@ This is better while developing because Factorio loads the files directly from t
 
 ```sh
 mkdir -p "$HOME/Library/Application Support/factorio/mods"
-ln -s "/Users/patrick/Documents/GitHub/Pokemon-Factory/PokemonTCGFactory_0.1.0" "$HOME/Library/Application Support/factorio/mods/PokemonTCGFactory_0.1.0"
+ln -s "/Users/patrick/Documents/GitHub/Pokemon-Factory" "$HOME/Library/Application Support/factorio/mods/Pokemon-Factory"
 ```
 
 If the symlink already exists and you want to recreate it:
 
 ```sh
-rm "$HOME/Library/Application Support/factorio/mods/PokemonTCGFactory_0.1.0"
-ln -s "/Users/patrick/Documents/GitHub/Pokemon-Factory/PokemonTCGFactory_0.1.0" "$HOME/Library/Application Support/factorio/mods/PokemonTCGFactory_0.1.0"
+rm "$HOME/Library/Application Support/factorio/mods/Pokemon-Factory"
+ln -s "/Users/patrick/Documents/GitHub/Pokemon-Factory" "$HOME/Library/Application Support/factorio/mods/Pokemon-Factory"
 ```
 
 ## Enable The Mod In Game
@@ -87,7 +87,7 @@ The recipe should be available from the start and should cost:
 
 Check these things first:
 
-- The folder name should be `PokemonTCGFactory_0.1.0`.
+- The folder name should be `Pokemon-Factory`.
 - The folder should contain `info.json` directly inside it.
 - The folder should be inside Factorio's `mods` directory.
 - The mod targets Factorio `2.0`, so it will not load in Factorio `1.1`.
