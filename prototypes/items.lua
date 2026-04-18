@@ -12,13 +12,13 @@ local prototype_fields = {
 
 local item_prototypes = {}
 
-for _, item in pairs(item_definitions) do
+for _, item in ipairs(item_definitions) do
   local prototype = {
     type = "item",
     name = item.name
   }
 
-  for _, field in pairs(prototype_fields) do
+  for _, field in ipairs(prototype_fields) do
     if item[field] ~= nil then
       prototype[field] = item[field]
     end

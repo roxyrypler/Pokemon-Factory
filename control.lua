@@ -5,22 +5,9 @@ local SELL_BUTTON = "pokemon_factory_sell_button"
 local EVALUATE_BUTTON = "pokemon_factory_evaluate_button"
 local SELL_STATUS = "pokemon_factory_sell_status"
 
-local ITEM_DEFINITIONS = require("definitions.items")
 local SHIPPING_BOX = "shipping-box"
 
-local function build_sell_values()
-  local sell_values = {}
-
-  for _, item in pairs(ITEM_DEFINITIONS) do
-    if item.sell_price and item.sell_price > 0 then
-      sell_values[item.name] = item.sell_price
-    end
-  end
-
-  return sell_values
-end
-
-local SELL_VALUES = build_sell_values()
+local SELL_VALUES = {}
 
 local function ensure_storage()
   storage.money = storage.money or 0
@@ -144,13 +131,6 @@ local function create_sell_menu(player)
     direction = "horizontal"
   })
   row.style.vertical_align = "center"
-
-  local card_icon = row.add({
-    type = "sprite",
-    sprite = "item/pokemon-card"
-  })
-  card_icon.style.width = 28
-  card_icon.style.height = 28
 
   row.add({
     type = "label",

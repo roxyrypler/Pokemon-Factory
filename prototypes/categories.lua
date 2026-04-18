@@ -8,14 +8,36 @@ data:extend({
   },
   {
     type = "item-subgroup",
-    name = "pokemon-cards",
+    name = "pokemon-paper-materials",
     group = "pokemon-tcg",
-    order = "a[cards]"
+    order = "a[paper-materials]"
+  },
+  {
+    type = "item-subgroup",
+    name = "pokemon-machines",
+    group = "pokemon-tcg",
+    order = "b[machines]"
   },
   {
     type = "item-subgroup",
     name = "pokemon-logistics",
     group = "pokemon-tcg",
-    order = "b[logistics]"
+    order = "c[logistics]"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-wood-chipping"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-pulping"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-paper-making"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-cardstock-pressing"
   }
 })

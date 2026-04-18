@@ -9,9 +9,13 @@ Pokemon-Factory
 The mod currently adds a new crafting tab, `Pokemon TCG`, with proof-of-concept recipes:
 
 ```text
-1 wood -> 1 Pokemon Card
-4 wood -> 1 Shipping Box
+wood -> wood chips -> paper pulp -> paper roll -> paper sheet -> cardstock
+Shipping Box
 ```
+
+For now, `Disable water and electricity` is enabled by default. In this mode, mod machines do not need electricity and recipes do not need water. Item inputs are still required.
+
+Disable `Disable water and electricity` in Factorio's startup mod settings later to test electricity and water inputs.
 
 ## Requirements
 
@@ -75,27 +79,36 @@ Pokemon TCG
 Inside that tab, you should see:
 
 ```text
-Pokemon Card
+Wood Chipper
+Wood Pulper
+Paper Press
+Cardstock Press
 Shipping Box
 ```
 
-Both recipes should be available from the start.
+These recipes and machines should be available from the start.
+
+## Check Paper Production
+
+1. Craft and place a `Wood Chipper`.
+2. Craft and place a `Wood Pulper`.
+3. Craft and place a `Paper Press`.
+4. Craft and place a `Cardstock Press`.
+5. Run the chain:
+
+```text
+Wood Chipper: wood -> wood chips
+Wood Pulper: wood chips -> paper pulp
+Paper Press: paper pulp -> paper roll
+Paper Press: paper roll -> paper sheet
+Cardstock Press: paper sheets -> cardstock
+```
 
 ## Check Selling
 
-1. Craft a `Pokemon Card`.
-2. Craft a `Shipping Box`.
-3. Place the `Shipping Box`.
-4. Put the `Pokemon Card` inside the `Shipping Box`.
-5. Open the `Shipping Box`.
-6. Click `Evaluate` to preview the value.
-7. Click `Sell`.
+The temporary generic `Pokemon Card` has been removed, so there are currently no sellable items.
 
-The money HUD at the top center of the screen should increase by:
-
-```text
-$1
-```
+You can still craft and place a `Shipping Box` to verify the shipping UI opens. `Evaluate` should report that there are no sellable items in the box.
 
 ## If The Mod Does Not Appear
 
