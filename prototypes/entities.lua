@@ -49,12 +49,14 @@ shipping_box.minable = {
   result = "shipping-box"
 }
 shipping_box.inventory_size = 16
+shipping_box.collision_box = {{-0.35, -0.35}, {0.35, 0.35}}
+shipping_box.selection_box = {{-0.5, -0.5}, {0.5, 0.5}}
 shipping_box.picture = {
   filename = "__Pokemon-Factory__/graphics/entities/shipping-box.png",
-  width = 96,
-  height = 96,
+  width = 320,
+  height = 320,
   shift = {0, 0},
-  scale = 0.5
+  scale = 0.1
 }
 
 wood_chipper.name = "wood-chipper"
@@ -125,9 +127,7 @@ cardstock_press.name = "cardstock-press"
 set_machine_art(
   cardstock_press,
   "__Pokemon-Factory__/graphics/icons/cardstock-press.png",
-  "__Pokemon-Factory__/graphics/entities/cardstock-press.png",
-  128,
-  1.25
+  "__Pokemon-Factory__/graphics/entities/cardstock-press.png"
 )
 set_machine_footprint_5x5(cardstock_press)
 cardstock_press.minable = {
