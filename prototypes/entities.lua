@@ -4,6 +4,9 @@ local wood_pulper = table.deepcopy(data.raw["assembling-machine"]["chemical-plan
 local paper_press = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
 local cardstock_press = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
 local pigment_extractor = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
+local ink_maker = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
+local sheet_printer = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
+local cardstock_cutter = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
 local disable_water_and_power = settings.startup["pokemon-factory-disable-water-and-power"].value
 local machine_collision_box_5x5 = {{-2.2, -2.2}, {2.2, 2.2}}
 local machine_selection_box_5x5 = {{-2.5, -2.5}, {2.5, 2.5}}
@@ -157,11 +160,68 @@ pigment_extractor.energy_usage = "100kW"
 pigment_extractor.next_upgrade = nil
 make_free_powered(pigment_extractor)
 
+ink_maker.name = "ink-maker"
+set_machine_art(
+  ink_maker,
+  "__Pokemon-Factory__/graphics/icons/ink-maker.png",
+  "__Pokemon-Factory__/graphics/entities/ink-maker.png"
+)
+set_machine_footprint_5x5(ink_maker)
+ink_maker.minable = {
+  mining_time = 0.2,
+  result = "ink-maker"
+}
+ink_maker.crafting_categories = {"pokemon-ink-making"}
+ink_maker.crafting_speed = 1
+ink_maker.energy_usage = "80kW"
+ink_maker.next_upgrade = nil
+make_free_powered(ink_maker)
+
+sheet_printer.name = "sheet-printer"
+set_machine_art(
+  sheet_printer,
+  "__Pokemon-Factory__/graphics/icons/sheet-printer.png",
+  "__Pokemon-Factory__/graphics/entities/sheet-printer.png"
+)
+set_machine_footprint_5x5(sheet_printer)
+sheet_printer.minable = {
+  mining_time = 0.2,
+  result = "sheet-printer"
+}
+sheet_printer.crafting_categories = {"pokemon-sheet-printing"}
+sheet_printer.crafting_speed = 0.75
+sheet_printer.energy_usage = "120kW"
+sheet_printer.next_upgrade = nil
+make_free_powered(sheet_printer)
+
+cardstock_cutter.name = "cardstock-cutter"
+set_machine_art(
+  cardstock_cutter,
+  "__Pokemon-Factory__/graphics/icons/cardstock-manipulator.png",
+  "__Pokemon-Factory__/graphics/entities/cardstock-manipulator.png"
+)
+set_machine_footprint_5x5(cardstock_cutter)
+cardstock_cutter.minable = {
+  mining_time = 0.2,
+  result = "cardstock-cutter"
+}
+cardstock_cutter.crafting_categories = {
+  "pokemon-card-cutting",
+  "pokemon-card-sorting"
+}
+cardstock_cutter.crafting_speed = 1
+cardstock_cutter.energy_usage = "100kW"
+cardstock_cutter.next_upgrade = nil
+make_free_powered(cardstock_cutter)
+
 data:extend({
   shipping_box,
   wood_chipper,
   wood_pulper,
   paper_press,
   cardstock_press,
-  pigment_extractor
+  pigment_extractor,
+  ink_maker,
+  sheet_printer,
+  cardstock_cutter
 })

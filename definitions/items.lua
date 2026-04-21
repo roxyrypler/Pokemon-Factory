@@ -55,6 +55,78 @@ return {
     stack_size = 200
   },
   {
+    name = "printing-ink",
+    icon = "__Pokemon-Factory__/graphics/icons/printing-ink.png",
+    icon_size = 64,
+    subgroup = "pokemon-ink-materials",
+    order = "b[printing-ink]",
+    stack_size = 200
+  },
+  {
+    name = "backside-printed-cardstock",
+    icon = "__Pokemon-Factory__/graphics/icons/backside-printed-cardstock.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "a[backside-printed-cardstock]",
+    stack_size = 200
+  },
+  {
+    name = "finished-printed-cardstock-sheet",
+    icon = "__Pokemon-Factory__/graphics/icons/finished-printed-cardstock-sheet.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "b[finished-printed-cardstock-sheet]",
+    stack_size = 200
+  },
+  {
+    name = "unsorted-cards",
+    icon = "__Pokemon-Factory__/graphics/icons/unsorted-cards.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "c[unsorted-cards]",
+    stack_size = 200
+  },
+  {
+    name = "common-card-pile",
+    icon = "__Pokemon-Factory__/graphics/icons/common-card-pile.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "d[common-card-pile]",
+    stack_size = 200
+  },
+  {
+    name = "uncommon-card-pile",
+    icon = "__Pokemon-Factory__/graphics/icons/uncommon-card-pile.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "e[uncommon-card-pile]",
+    stack_size = 200
+  },
+  {
+    name = "trainer-card-pile",
+    icon = "__Pokemon-Factory__/graphics/icons/trainer-card-pile.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "f[trainer-card-pile]",
+    stack_size = 200
+  },
+  {
+    name = "energy-card-pile",
+    icon = "__Pokemon-Factory__/graphics/icons/energy-card-pile.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "g[energy-card-pile]",
+    stack_size = 200
+  },
+  {
+    name = "rare-card-pile",
+    icon = "__Pokemon-Factory__/graphics/icons/rare-card-pile.png",
+    icon_size = 64,
+    subgroup = "pokemon-card-printing",
+    order = "h[rare-card-pile]",
+    stack_size = 200
+  },
+  {
     name = "wood-pulper",
     icon = "__Pokemon-Factory__/graphics/icons/wood-pulper.png",
     icon_size = 64,
@@ -97,6 +169,33 @@ return {
     subgroup = "pokemon-machines",
     order = "e[pigment-extractor]",
     place_result = "pigment-extractor",
+    stack_size = 20
+  },
+  {
+    name = "ink-maker",
+    icon = "__Pokemon-Factory__/graphics/icons/ink-maker.png",
+    icon_size = 64,
+    subgroup = "pokemon-machines",
+    order = "f[ink-maker]",
+    place_result = "ink-maker",
+    stack_size = 20
+  },
+  {
+    name = "sheet-printer",
+    icon = "__Pokemon-Factory__/graphics/icons/sheet-printer.png",
+    icon_size = 64,
+    subgroup = "pokemon-machines",
+    order = "g[sheet-printer]",
+    place_result = "sheet-printer",
+    stack_size = 20
+  },
+  {
+    name = "cardstock-cutter",
+    icon = "__Pokemon-Factory__/graphics/icons/cardstock-manipulator.png",
+    icon_size = 64,
+    subgroup = "pokemon-machines",
+    order = "h[cardstock-cutter]",
+    place_result = "cardstock-cutter",
     stack_size = 20
   },
   {

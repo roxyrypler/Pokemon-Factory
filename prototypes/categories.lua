@@ -28,7 +28,13 @@ data:extend({
     type = "item-subgroup",
     name = "pokemon-logistics",
     group = "pokemon-tcg",
-    order = "d[logistics]"
+    order = "e[logistics]"
+  },
+  {
+    type = "item-subgroup",
+    name = "pokemon-card-printing",
+    group = "pokemon-tcg",
+    order = "d[card-printing]"
   },
   {
     type = "recipe-category",
@@ -49,5 +55,21 @@ data:extend({
   {
     type = "recipe-category",
     name = "pokemon-pigment-extraction"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-ink-making"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-sheet-printing"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-card-cutting"
+  },
+  {
+    type = "recipe-category",
+    name = "pokemon-card-sorting"
   }
 })

@@ -11,6 +11,11 @@ The mod currently adds a new crafting tab, `Pokemon TCG`, with proof-of-concept 
 ```text
 wood -> wood chips -> paper pulp -> paper roll -> paper sheet -> cardstock
 coal + iron ore + copper ore + stone -> color pigments
+color pigments -> printing ink
+cardstock + printing ink -> backside printed cardstock
+backside printed cardstock + printing ink -> finished printed cardstock sheet
+finished printed cardstock sheet -> unsorted cards
+unsorted cards -> common/uncommon/trainer/energy/rare card piles
 Shipping Box
 ```
 
@@ -85,6 +90,9 @@ Wood Pulper
 Paper Press
 Cardstock Press
 Pigment Extractor
+Ink Maker
+Sheet Printer
+Cardstock Manipulator
 Shipping Box
 ```
 
@@ -113,6 +121,21 @@ Cardstock Press: paper sheets -> cardstock
 
 ```text
 Pigment Extractor: coal + iron ore + copper ore + stone -> color pigments
+```
+
+## Check Printing
+
+1. Craft and place an `Ink Maker`.
+2. Craft and place a `Sheet Printer`.
+3. Craft and place a `Cardstock Manipulator`.
+4. Run the chain:
+
+```text
+Ink Maker: color pigments -> printing ink
+Sheet Printer: cardstock + printing ink -> backside printed cardstock
+Sheet Printer: backside printed cardstock + printing ink -> finished printed cardstock sheet
+Cardstock Manipulator: finished printed cardstock sheet -> unsorted cards
+Cardstock Manipulator: unsorted cards -> common, uncommon, trainer, energy, and rare card piles
 ```
 
 ## Check Selling

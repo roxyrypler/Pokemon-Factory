@@ -74,6 +74,39 @@ data:extend({
   },
   {
     type = "recipe",
+    name = "ink-maker",
+    enabled = true,
+    ingredients = {},
+    results = {
+      { type = "item", name = "ink-maker", amount = 1 }
+    },
+    subgroup = "pokemon-machines",
+    order = "f[ink-maker]"
+  },
+  {
+    type = "recipe",
+    name = "sheet-printer",
+    enabled = true,
+    ingredients = {},
+    results = {
+      { type = "item", name = "sheet-printer", amount = 1 }
+    },
+    subgroup = "pokemon-machines",
+    order = "g[sheet-printer]"
+  },
+  {
+    type = "recipe",
+    name = "cardstock-cutter",
+    enabled = true,
+    ingredients = {},
+    results = {
+      { type = "item", name = "cardstock-cutter", amount = 1 }
+    },
+    subgroup = "pokemon-machines",
+    order = "h[cardstock-cutter]"
+  },
+  {
+    type = "recipe",
     name = "wood-chips",
     category = "pokemon-wood-chipping",
     enabled = true,
@@ -176,5 +209,88 @@ data:extend({
     },
     subgroup = "pokemon-ink-materials",
     order = "a[color-pigments]"
+  },
+  {
+    type = "recipe",
+    name = "printing-ink",
+    category = "pokemon-ink-making",
+    enabled = true,
+    energy_required = 1,
+    ingredients = {
+      { type = "item", name = "color-pigments", amount = 1 }
+    },
+    results = {
+      { type = "item", name = "printing-ink", amount = 2 }
+    },
+    subgroup = "pokemon-ink-materials",
+    order = "b[printing-ink]"
+  },
+  {
+    type = "recipe",
+    name = "backside-printed-cardstock",
+    category = "pokemon-sheet-printing",
+    enabled = true,
+    energy_required = 2,
+    ingredients = {
+      { type = "item", name = "cardstock", amount = 1 },
+      { type = "item", name = "printing-ink", amount = 1 }
+    },
+    results = {
+      { type = "item", name = "backside-printed-cardstock", amount = 1 }
+    },
+    subgroup = "pokemon-card-printing",
+    order = "a[backside-printed-cardstock]"
+  },
+  {
+    type = "recipe",
+    name = "finished-printed-cardstock-sheet",
+    category = "pokemon-sheet-printing",
+    enabled = true,
+    energy_required = 2,
+    ingredients = {
+      { type = "item", name = "backside-printed-cardstock", amount = 1 },
+      { type = "item", name = "printing-ink", amount = 1 }
+    },
+    results = {
+      { type = "item", name = "finished-printed-cardstock-sheet", amount = 1 }
+    },
+    subgroup = "pokemon-card-printing",
+    order = "b[finished-printed-cardstock-sheet]"
+  },
+  {
+    type = "recipe",
+    name = "unsorted-cards",
+    category = "pokemon-card-cutting",
+    enabled = true,
+    energy_required = 1,
+    ingredients = {
+      { type = "item", name = "finished-printed-cardstock-sheet", amount = 1 }
+    },
+    results = {
+      { type = "item", name = "unsorted-cards", amount = 10 }
+    },
+    subgroup = "pokemon-card-printing",
+    order = "c[unsorted-cards]"
+  },
+  {
+    type = "recipe",
+    name = "sorted-card-piles",
+    icon = "__Pokemon-Factory__/graphics/icons/common-card-pile.png",
+    icon_size = 64,
+    category = "pokemon-card-sorting",
+    enabled = true,
+    energy_required = 2,
+    ingredients = {
+      { type = "item", name = "unsorted-cards", amount = 10 }
+    },
+    results = {
+      { type = "item", name = "common-card-pile", amount = 5 },
+      { type = "item", name = "uncommon-card-pile", amount = 2 },
+      { type = "item", name = "trainer-card-pile", amount = 1 },
+      { type = "item", name = "energy-card-pile", amount = 1 },
+      { type = "item", name = "rare-card-pile", amount = 1 }
+    },
+    subgroup = "pokemon-card-printing",
+    order = "d[sorted-card-piles]"
   }
 })
